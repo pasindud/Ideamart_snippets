@@ -2,15 +2,15 @@
 
 $url = "http://api.dialog.lk:8080/subscription/send";
 
-subcribe('APP_005755','asda',$address);
+subcribe("http://api.dialog.lk:8080/subscription/send",'APP_0001','pw',$address,"1");
 
-function subcribe($url,$appid,$pw,$sub){
+function subcribe($url,$appid,$pw,$sub,$type){
 
     $arrayField = array("applicationId" => $appid,
         "password" => $pw,
         "subscriberId" => $sub,
         "version"=>"1.0",
-        "action"=>"1"
+        "action"=>$type
     );
 
     $jsonStream = json_encode($arrayField);
